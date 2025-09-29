@@ -99,5 +99,5 @@ Este es el modelo inicial de la base de datos relacional a utilizar para nuestro
 ![Diagrama Entidad-Relacion](images/diagrama-e-r.png)
 
 ---
-
+ahi donde dice tex es 1.N en la imagen ER
 *Próximos avances se mostrarán durante los siguientes meses.*
