@@ -96,8 +96,7 @@ Este es el modelo inicial de la base de datos relacional a utilizar para nuestro
 
 #### Diagrama Entidad-Relación
 
-![Diagrama Entidad-Relacion](images/diagrama-e-r.png)
+![Diagrama Entidad-Relacion](https://github.com/user-attachments/assets/d7d38131-982c-47c6-a944-2e2070d8a2c3)
 
 ---
-ahi donde dice tex es 1.N en la imagen ER
 *Próximos avances se mostrarán durante los siguientes meses.*
