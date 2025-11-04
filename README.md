@@ -11,7 +11,6 @@ El sistema busca mantener un registro organizado de todas las inscripciones y pr
 | Nombre del Alumno/a | Carnet | 
 | :--- | :--- | 
 | Cindy Ariana Reyes Molina | RM24001 | 
-| Jefferson Stanley Ramos Damas | RD24003 | 
 | Bryan José Moreno Villanueva | MV24050 | 
 | Diego Oswaldo Meza Argueta | MA20081 | 
 | Irvin Adonay Ramírez Linares | RL22020 | 
@@ -98,5 +97,26 @@ Este es el modelo inicial de la base de datos relacional a utilizar para nuestro
 
 ![Diagrama Entidad-Relacion](https://github.com/user-attachments/assets/d7d38131-982c-47c6-a944-2e2070d8a2c3)
 
+## 📋 Entrega 2
+
+# Cursos Online
+
+Aplicación web para la gestión de cursos, instructores y estudiantes.  
+Desarrollada con **Spring Boot** en el back-end y preparada para integrarse con **React** en el front-end.  
+
 ---
-*Próximos avances se mostrarán durante los siguientes meses.*
+
+## 💻 Tecnologías
+- **Java 21**  
+- **Spring Boot 3.3.0** (Web, Data JPA)  
+- **PostgreSQL** como base de datos  
+- **Lombok** para simplificar código  
+- **Maven** como gestor de dependencias  
+
+---
+
+## 📦 Funcionalidades
+- Gestión de **usuarios** (instructores y estudiantes)  
+- Gestión de **cursos** (crear, editar, eliminar)  
+- Inscripción de estudiantes en cursos  
+- Listado de cursos por estudiante e instructores
