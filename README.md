@@ -123,3 +123,66 @@ Desarrollada con **Spring Boot** en el back-end y preparada para integrarse con 
 
 
 ## Entrega 3
+
+## Funcionalidad Completa (Demo Pruebas en postman)
+
+La aplicación implementa todas las funcionalidades solicitadas para el sistema, incluyendo:
+
+Gestión de clientes
+
+Gestión de productos
+
+Facturación (creación, detalle y totales)
+
+Consultas y reportes básicos
+
+Validaciones esenciales
+
+📌 Todas las funcionalidades fueron demostradas mediante pruebas en Postman.
+
+
+## Manejo de Relaciones DB
+
+El sistema implementa correctamente las relaciones entre las entidades principales:
+
+Cliente – Factura → Relación 1 a N
+
+Factura – DetalleFactura → Relación 1 a N
+
+Producto – DetalleFactura → Relación 1 a N
+
+
+## Calidad de Código y Manejo de Errores
+
+El proyecto mantiene buenas prácticas, incluyendo:
+
+Arquitectura por capas (Controller – Service – Repository)
+
+Uso de DTOs cuando corresponde
+
+Validaciones mediante anotaciones (ex: @NotNull, @Size, @Positive)
+
+Manejo centralizado de errores con @ControllerAdvice
+
+Respuestas JSON claras y estandarizadas
+
+
+## Pruebas Unitarias JUnit
+
+Se implementaron pruebas unitarias utilizando:
+
+JUnit 5
+
+Mockito para la simulación de dependencias
+
+Pruebas de servicios y validaciones
+
+Verificación de cálculos en el proceso de facturación
+
+## tecnologias 
+
+JUnit 5
+
+Mockito
+
+Postman
