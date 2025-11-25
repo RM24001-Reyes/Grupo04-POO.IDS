@@ -122,7 +122,7 @@ Desarrollada con **Spring Boot** en el back-end y preparada para integrarse con 
 - Listado de cursos por estudiante e instructores
 
 
-## Entrega 3
+## 📋 Entrega 3
 
 ## Funcionalidad Completa (Demo Pruebas en postman)
 
@@ -179,7 +179,7 @@ Pruebas de servicios y validaciones
 
 Verificación de cálculos en el proceso de facturación
 
-## tecnologias 
+## 💻tecnologias 
 
 JUnit 5
 
