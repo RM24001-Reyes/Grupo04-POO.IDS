@@ -123,66 +123,57 @@ Desarrollada con **Spring Boot** en el back-end y preparada para integrarse con 
 
 
 ## 📋 Entrega 3
+🚀 Características principales
 
-## Funcionalidad Completa (Demo Pruebas en postman)
+## CRUD completo para:
 
-La aplicación implementa todas las funcionalidades solicitadas para el sistema, incluyendo:
+Usuarios
 
-Gestión de clientes
+Instructores
 
-Gestión de productos
+Estudiantes
 
-Facturación (creación, detalle y totales)
+Cursos
 
-Consultas y reportes básicos
+## Validación de correos electrónicos duplicados.
 
-Validaciones esenciales
+Manejo de excepciones personalizadas:
 
-📌 Todas las funcionalidades fueron demostradas mediante pruebas en Postman.
+ResourceNotFoundException
 
+ConflictException
 
-## Manejo de Relaciones DB
+## Pruebas unitarias con JUnit + Mockito.
 
-El sistema implementa correctamente las relaciones entre las entidades principales:
+## Arquitectura REST clara y mantenible.
+- Model
+- Controller
+- Repository
+- Exception
+- Service
+## Relaciones entre entidades
 
-Cliente – Factura → Relación 1 a N
+Usuario → Instructor/Estudiante:
+Un usuario puede actuar como instructor o estudiante.
 
-Factura – DetalleFactura → Relación 1 a N
+Instructor → Curso:
+Un instructor puede crear varios cursos.
 
-Producto – DetalleFactura → Relación 1 a N
+Estudiante → Curso (Inscripción):
+Un estudiante puede inscribirse en múltiples cursos.
 
+## Tecnologías utilizadas
 
-## Calidad de Código y Manejo de Errores
+- Java 17
 
-El proyecto mantiene buenas prácticas, incluyendo:
+- Spring Boot
 
-Arquitectura por capas (Controller – Service – Repository)
+- Spring Data JPA
 
-Uso de DTOs cuando corresponde
+- Hibernate
 
-Validaciones mediante anotaciones (ex: @NotNull, @Size, @Positive)
+- PostgreSQL / MySQL (dependiendo de configuración)
 
-Manejo centralizado de errores con @ControllerAdvice
+- JUnit 5
 
-Respuestas JSON claras y estandarizadas
-
-
-## Pruebas Unitarias JUnit
-
-Se implementaron pruebas unitarias utilizando:
-
-JUnit 5
-
-Mockito para la simulación de dependencias
-
-Pruebas de servicios y validaciones
-
-Verificación de cálculos en el proceso de facturación
-
-## 💻tecnologias 
-
-JUnit 5
-
-Mockito
-
-Postman
+- Mockito
