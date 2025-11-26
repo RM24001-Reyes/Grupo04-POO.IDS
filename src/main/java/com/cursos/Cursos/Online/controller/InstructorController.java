@@ -20,10 +20,13 @@ public class InstructorController {
     }
 
     // Crear curso
-    @PostMapping("/curso")
-    public ResponseEntity<Curso> crearCurso(@RequestBody Curso curso) {
-        return ResponseEntity.ok(instructorService.crearCurso(curso));
+    @PostMapping("/{id}/curso")
+    public ResponseEntity<Curso> crearCurso(
+            @PathVariable Long id,
+            @RequestBody Curso curso) {
+        return ResponseEntity.ok(instructorService.crearCurso(id, curso));
     }
+
 
     //  Editar curso
     @PutMapping("/curso/{idCurso}")

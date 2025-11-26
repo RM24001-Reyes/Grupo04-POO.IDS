@@ -1,5 +1,7 @@
 package com.cursos.Cursos.Online.service;
 
+import com.cursos.Cursos.Online.exception.ConflictException;
+import com.cursos.Cursos.Online.exception.ResourceNotFoundException;
 import com.cursos.Cursos.Online.model.Curso;
 import com.cursos.Cursos.Online.model.EstadoCurso;
 import com.cursos.Cursos.Online.model.Instructor;
@@ -33,17 +35,24 @@ public class CursoService {
 
     // Crear curso
     public Curso crearCurso(Curso curso) {
+
         if (curso.getTitulo() == null || curso.getDescripcion() == null) {
-            throw new RuntimeException("El título y la descripción son obligatorios.");
+            throw new ConflictException("El título y la descripción son obligatorios.");
         }
+
+        // Validación: curso con el mismo nombre
+        cursoRepository.findByTitulo(curso.getTitulo())
+                .ifPresent(c -> {
+                    throw new ConflictException("Ya existe un curso con el nombre: " + curso.getTitulo());
+                });
 
         // Validar instructor existente
         if (curso.getInstructor() == null || curso.getInstructor().getId() == null) {
-            throw new RuntimeException("Debe asignar un instructor existente al curso.");
+            throw new ConflictException("Debe asignar un instructor existente al curso.");
         }
 
         Instructor instructor = instructorRepository.findById(curso.getInstructor().getId())
-                .orElseThrow(() -> new RuntimeException("Instructor no encontrado."));
+                .orElseThrow(() -> new ResourceNotFoundException("Instructor no encontrado."));
 
         curso.setInstructor(instructor);
         curso.setEstado(EstadoCurso.ACTIVO);
@@ -54,17 +63,27 @@ public class CursoService {
     // Actualizar curso
     public Curso actualizarCurso(Long id, Curso datos) {
         Curso curso = cursoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Curso no encontrado."));
+                .orElseThrow(() -> new ResourceNotFoundException("Curso no encontrado."));
+
+        // Validar si el nuevo nombre ya existe en otro curso
+        cursoRepository.findByTitulo(datos.getTitulo())
+                .ifPresent(c -> {
+                    if (!c.getId().equals(id)) {
+                        throw new ConflictException("Ya existe otro curso con el nombre: " + datos.getTitulo());
+                    }
+                });
+
         curso.setTitulo(datos.getTitulo());
         curso.setDescripcion(datos.getDescripcion());
         curso.setEstado(datos.getEstado());
+
         return cursoRepository.save(curso);
     }
 
     // Eliminar curso
     public void eliminarCurso(Long id) {
         if (!cursoRepository.existsById(id)) {
-            throw new RuntimeException("El curso con ID " + id + " no existe.");
+            throw new ResourceNotFoundException("El curso con ID " + id + " no existe.");
         }
         cursoRepository.deleteById(id);
     }

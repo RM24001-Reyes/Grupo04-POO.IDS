@@ -31,7 +31,7 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.crearInstructor(instructor));
     }
 
-    // ✅ Crear un estudiante
+    //  Crear un estudiante
     @PostMapping("/estudiantes")
     public ResponseEntity<Estudiante> crearEstudiante(@RequestBody Estudiante estudiante) {
         return ResponseEntity.ok(usuarioService.crearEstudiante(estudiante));

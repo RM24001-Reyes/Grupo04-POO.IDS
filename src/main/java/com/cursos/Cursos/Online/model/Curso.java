@@ -42,4 +42,14 @@ public class Curso {
     )
     @JsonIgnore
     private List<Estudiante> estudiantesInscritos;
+
+    public void setId(long l) {
+    }
+
+    public void setId_curso(long l) {
+    }
+
+    public Object getId() {
+        return null;
+    }
 }
